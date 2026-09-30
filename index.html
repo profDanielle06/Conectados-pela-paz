@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Conectados pela Paz</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <span class="logo">✦</span>
+
+        <div>
+            <strong>Conectados pela Paz</strong>
+            <small>Escola Cívico-Militar José de Souza Damy</small>
+        </div>
+    </header>
+
+    <nav aria-label="Áreas do aplicativo">
+        <button data-page="conhecimento" aria-current="page">
+            01 · Conhecer
+        </button>
+
+        <button data-page="relato">
+            02 · Registrar relato
+        </button>
+
+        <button data-page="gestao">
+            03 · Gestão pedagógica
+        </button>
+    </nav>
+
+    <main>
+        <!-- TELA 1: CONHECIMENTO -->
+        <section id="conhecimento">
+            <p class="eyebrow">
+                ESCUTA · RESPEITO · ACOLHIMENTO
+            </p>
+
+            <h1>
+                Uma escola onde<br>
+                todos têm voz.
+            </h1>
+
+            <p class="lead">
+                Aprender a reconhecer situações de violência é o primeiro
+                passo para construir uma convivência melhor.
+            </p>
+
+            <button class="primary" data-page="relato">
+                Quero registrar um relato →
+            </button>
+
+            <div class="grid">
+                <article>
+                    <h2>Bullying</h2>
+
+                    <p>
+                        Atitudes agressivas intencionais e repetidas, em uma
+                        relação de desequilíbrio de poder. Podem envolver
+                        humilhação, apelidos ofensivos, exclusão ou agressão física.
+                    </p>
+                </article>
+
+                <article>
+                    <h2>Cyberbullying</h2>
+
+                    <p>
+                        Intimidação por meios digitais, como mensagens ofensivas,
+                        exposição de imagens e ataques em grupos ou redes sociais.
+                        A circulação do conteúdo pode ampliar o sofrimento.
+                    </p>
+                </article>
+
+                <article>
+                    <h2>Como ajudar?</h2>
+
+                    <p>
+                        Escute sem julgar. Não compartilhe conteúdo ofensivo.
+                        Busque um adulto de confiança e a equipe pedagógica.
+                        Guarde evidências sem espalhá-las.
+                    </p>
+                </article>
+            </div>
+
+            <article>
+                <h2>Você merece ser ouvido</h2>
+
+                <p>
+                    Mesmo sem saber classificar o ocorrido, você pode pedir apoio.
+                    Em situação de perigo imediato, procure presencialmente um
+                    adulto responsável. Este protótipo não é monitorado e não
+                    presta atendimento.
+                </p>
+            </article>
+        </section>
+
+        <!-- TELA 2: REGISTRO DE RELATOS -->
+        <section id="relato" hidden>
+            <p class="eyebrow">CANAL DE ESCUTA</p>
+
+            <h1>Conte o que aconteceu.</h1>
+
+            <p>
+                Simule um registro como vítima ou testemunha.
+                Nenhuma informação será enviada à equipe.
+            </p>
+
+            <form id="report">
+                <div class="grid">
+                    <label>
+                        Tipo de situação
+
+                        <select name="tipo" required>
+                            <option value="">Selecione</option>
+                            <option>Verbal</option>
+                            <option>Física</option>
+                            <option>Psicológica / exclusão</option>
+                            <option>Cyberbullying</option>
+                            <option>Outra / não sei</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        Local
+
+                        <input
+                            name="local"
+                            maxlength="120"
+                            placeholder="Ex.: sala, pátio, rede social"
+                            required
+                        >
+                    </label>
+
+                    <label>
+                        Data aproximada
+
+                        <input
+                            name="data"
+                            type="date"
+                            required
+                        >
+                    </label>
+                </div>
+
+                <label>
+                    Como deseja se identificar?
+
+                    <select name="modo" id="mode">
+                        <option value="anonimo">
+                            Sem identificação neste formulário
+                        </option>
+
+                        <option value="identificado">
+                            Com identificação
+                        </option>
+                    </select>
+                </label>
+
+                <div id="identity" hidden>
+                    <label>
+                        Nome fictício
+
+                        <input
+                            name="nome"
+                            maxlength="100"
+                        >
+                    </label>
+
+                    <label>
+                        Turma ou contato fictício
+
+                        <input
+                            name="contato"
+                            maxlength="100"
+                        >
+                    </label>
+                </div>
+
+                <label>
+                    Relato
+
+                    <textarea
+                        name="descricao"
+                        minlength="10"
+                        maxlength="4000"
+                        rows="5"
+                        placeholder="Descreva o ocorrido usando apenas personagens e situações fictícias."
+                        required
+                    ></textarea>
+                </label>
+
+                <label class="check">
+                    <input type="checkbox" name="risco">
+
+                    A situação simulada envolve risco imediato
+                </label>
+
+                <label class="check">
+                    <input type="checkbox" required>
+
+                    Entendo que esta demonstração não envia denúncias reais.
+                </label>
+
+                <button class="primary">
+                    Registrar simulação
+                </button>
+
+                <p id="reportError" role="alert"></p>
+            </form>
+
+            <article id="receipt" role="status" hidden></article>
+        </section>
+
+        <!-- TELA 3: GESTÃO PEDAGÓGICA -->
+        <section id="gestao" hidden>
+            <p class="eyebrow">ACOMPANHAMENTO ESCOLAR</p>
+
+            <h1>Gestão pedagógica.</h1>
+
+            <div id="gate">
+                <article>
+                    <h2>Área demonstrativa da equipe</h2>
+
+                    <p>
+                        Em uma implantação real, esta área exige login e
+                        autorização no servidor. Aqui o acesso é aberto
+                        para apresentação, sem proteção dos dados.
+                    </p>
+
+                    <button class="primary" id="enter">
+                        Entrar na demonstração
+                    </button>
+                </article>
+            </div>
+
+            <div id="dashboard" hidden>
+                <div class="toolbar">
+                    <button id="exit">
+                        Sair da área
+                    </button>
+
+                    <button id="seed">
+                        Adicionar casos fictícios
+                    </button>
+
+                    <button id="clear">
+                        Apagar registros locais
+                    </button>
+                </div>
+
+                <div id="metrics" class="grid"></div>
+
+                <label>
+                    Filtrar por status
+
+                    <select id="filter">
+                        <option>Todos</option>
+                        <option>Pendente</option>
+                        <option>Em atendimento</option>
+                        <option>Concluído</option>
+                    </select>
+                </label>
+
+                <div id="cases"></div>
+
+                <article id="detail" hidden>
+                    <h2 id="caseTitle"></h2>
+
+                    <div id="caseText"></div>
+
+                    <form id="action">
+                        <label>
+                            Status
+
+                            <select name="status">
+                                <option>Pendente</option>
+                                <option>Em atendimento</option>
+                                <option>Concluído</option>
+                            </select>
+                        </label>
+
+                        <label>
+                            Plano de acolhimento da vítima
+
+                            <textarea
+                                name="vitima"
+                                maxlength="3000"
+                                rows="3"
+                            ></textarea>
+                        </label>
+
+                        <label>
+                            Plano educativo e apoio ao estudante apontado no relato
+
+                            <textarea
+                                name="apoio"
+                                maxlength="3000"
+                                rows="3"
+                            ></textarea>
+                        </label>
+
+                        <label>
+                            Próxima checagem
+
+                            <input
+                                name="proxima"
+                                type="date"
+                            >
+                        </label>
+
+                        <label>
+                            Registro de acompanhamento
+
+                            <textarea
+                                name="nota"
+                                maxlength="3000"
+                                rows="3"
+                            ></textarea>
+                        </label>
+
+                        <button class="primary">
+                            Salvar acompanhamento
+                        </button>
+
+                        <p id="saveMessage" role="status"></p>
+                    </form>
+
+                    <h3>Histórico</h3>
+
+                    <div id="history"></div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        Projeto Conectados pela Paz · Protótipo educacional · FECIPAN 2026
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
